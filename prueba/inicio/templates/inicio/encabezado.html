@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-<title>Plantilla</title>
+<title>{% block titulo %} {% endblock %}</title>
 
-{% block titulo %} {% endblock %}
+
 
 {% load static %}
 <link href="{% static 'inicio/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css">
@@ -65,7 +65,7 @@
                 <a href="#">
                     <img src="{%block imagen%}{%endblock%}" alt="Home">
                     <div class="user-info">
-                        Principal <span>DSM</span>
+                        {% block nombre %} {% endblock %} <span>{% block info %} {% endblock %}</span>
                     </div>
                 </a>
             </div>
