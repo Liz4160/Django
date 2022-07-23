@@ -51,45 +51,69 @@
 
 </head>
 
-<body>
+    <body>
 
 	
+ 	    <div class="page-container">
 
- 	<div class="page-container">
 
+		    <!-- Barra de menú -->
+		    <div class="sidebar">
 
-		<!-- Barra de menú -->
-		<div class="sidebar">
+                <div class="user-menu dropdown">
+                    <a href="#">
+                        <img src="{%block imagen%}{%endblock%}" alt="Home">
+                        <div class="user-info">
+                            {% block nombre %} {% endblock %} <span>{% block info %} {% endblock %}</span>
+                        </div>
+                    </a>
+                </div>
 
-            <div class="user-menu dropdown">
-                <a href="#">
-                    <img src="{%block imagen%}{%endblock%}" alt="Home">
-                    <div class="user-info">
-                        {% block nombre %} {% endblock %} <span>{% block info %} {% endblock %}</span>
-                    </div>
-                </a>
-            </div>
-
-			<div class="sidebar-content">
-				<!-- Menú de navegación -->
-				<ul class="navigation">
+			    <div class="sidebar-content">
+				    <!-- Menú de navegación -->
+				    <ul class="navigation">
 							<li><a href="{%url 'Principal'%}">Principal</a></li>
 							<li><a href="{%url 'Formulario'%}">Registro</a></li>
                             <li><a href="{%url 'Contacto'%}">Contacto</a></li>		
-				</ul>
-				<!-- /Fin menú -->
-			</div>
-		</div>
-		<!-- /sidebar -->
+				    </ul>
+				    <!-- /Fin menú -->
+			    </div>
+		    </div>
+		    <!-- /sidebar -->
 
-        {% block content %}
-        
-        {% endblock %}
-	</div>
-    <!-- CONTENIDO -->
-    {% block contenido %} <!--Template Tag-->
-        <!--block sirve para indicar que colocaremos un bloque de
-        contenido a través de nuestra variable content -->
-    {% endblock %}
-</body>
+	    </div>
+
+        <!-- Contenido Principal-->
+        <div class="page-content">
+            <!-- CONTENIDO -->
+            {% block encabezado %}
+            {% endblock %}
+
+            <!-- Barra de navegacion-->
+            <div class="breadcrumb-line">
+                <ul class="breadcrumb">
+
+                    <a href="{%url 'Principal'%}">
+                        {% if request.path == '/' %}
+                            Principal
+                        {% else %}
+                            Principal{{request.path}}
+                        {% endif %}
+                    </a>
+                
+                </ul>
+            </div>
+            <!--/Barra de navegacion-->
+            
+            {% block contenido %} <!--Template Tag-->
+                <!--block sirve para indicar que colocaremos un bloque de
+                contenido a través de nuestra variable content -->
+            {% endblock %}
+            
+	    </div>
+        <!-- /Contenido Principal-->
+    </body>
 </html>
+		
+
+

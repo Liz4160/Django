@@ -12,12 +12,7 @@
 
 {% block info %} Inscribete {% endblock %}
 
-{% block contenido %}
-
-		<!-- Contenido Principal-->
-        <div class="page-content">
-
-
+		{% block encabezado %}
 			<!--Encabezdo -->
 			<div class="page-header">
 				<div class="page-title">
@@ -25,22 +20,22 @@
 				    <small>Ingresa tu información</small></h3>
 				</div>
 
-				
-				
 			</div>
 			<!-- /Encabezado-->
+		{% endblock %}
 
-			<!-- Formulario -->
-			<form class="form-horizontal" action="#" role="form">
-	            <div class="panel panel-default">
-	                <div class="panel-body">
+		{% block contenido %}
+		<!-- Formulario -->
+		<form class="form-horizontal" action="#" role="form">
+	        <div class="panel panel-default">
+	            <div class="panel-body">
 
-				        <div class="form-group">
-				            <label class="col-sm-2 control-label text-right">Matricula:</label>
+			        <div class="form-group">
+			            <label class="col-sm-2 control-label text-right">Matricula:</label>
 				            <div class="col-sm-10">
 				            	<input type="text" class="form-control">
 				            </div>
-				        </div>
+				    </div>
 				        
 				        <div class="form-group">
 				            <label class="col-sm-2 control-label text-right">Nombre:</label>
@@ -75,7 +70,7 @@
 				</div>
 			</form>
 		<!-- Fin del Formulario -->
-		</div>
-		<!-- /Contenido Principal-->
+	{% endblock %}
+		
 
-{% endblock %}
+

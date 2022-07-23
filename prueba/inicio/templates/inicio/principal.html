@@ -12,23 +12,16 @@
 
 {% block info %} Inicio {% endblock %}
 
-{% block contenido %}
-		<!-- Contenido Principal-->
-        <div class="page-content">
-
-
-			<!--Encabezdo -->
-			<div class="page-header">
-				<div class="page-title">
-					<h3>Alumnos
-				    <small>Lista de Alumnos 9A</small></h3>
-				</div>
-
-				
-			</div>
-			<!-- /Encabezado-->
-
-
+	{% block encabezado %}
+	<!--Encabezdo -->
+	<div class="page-header">
+		<div class="page-title">
+			<h3>Alumnos
+		    <small>Lista de Alumnos 9A</small></h3>
 		</div>
-        <!-- /Contenido Principal-->
+	</div>
+	<!-- /Encabezado-->
+	{% endblock %}
+
+{% block contenido %}
 {% endblock %}
